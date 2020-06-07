@@ -11,7 +11,7 @@ const Projects = ({ user }) => {
         <ul>
           {user.projects.map((project, i) => (
             <ProjectItem key={i}>
-              <ProjectTitle>{project.name}</ProjectTitle>
+              <ProjectTitle>{toTitleCase(project.name)}</ProjectTitle>
               <p>{project.summary}</p>
               <SkillContainer>
                 {[...project.languages, ...project.libraries].map((item, j) => (
@@ -24,6 +24,14 @@ const Projects = ({ user }) => {
       </div>
     </Layout>
   );
+};
+
+const toTitleCase = (phrase) => {
+  return phrase
+    .toLowerCase()
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 };
 
 export default Projects;

@@ -11,7 +11,7 @@ const Education = ({ user }) => {
         <ul>
           {user.education.map((education, i) => (
             <EducationItem key={i}>
-              <Institution>{education.institution}</Institution>
+              <a href={education.url} target="_blank"><Institution>{education.institution}</Institution></a>
               <div>
                 <Degree>
                   {education.studyType}, {education.area}

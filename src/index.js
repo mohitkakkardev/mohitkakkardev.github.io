@@ -14,6 +14,7 @@ const LoadingIndicator = props => {
       style={{
         width: "100%",
         height: "100",
+        paddingTop: "250px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center"

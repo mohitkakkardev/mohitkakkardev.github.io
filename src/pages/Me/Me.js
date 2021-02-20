@@ -22,8 +22,9 @@ const Me = ({ user }) => {
         <SectionTitle>Profiles</SectionTitle>
         <ul>
           {user.basics.profiles.map((profile, i) => (
+            profile.network !== "gitconnected" &&
             <ProfileLink key={profile.network}>
-              {i !== 0 && ' | '}
+              {(i !== 0 && i !== 1) && ' | '}
               <a href={profile.url} target="_blank" rel="noreferrer noopener">
                 {profile.network}
               </a>
